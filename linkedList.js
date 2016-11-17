@@ -64,4 +64,4 @@ function linkedListGenerator(){
 }
 
 var ll = linkedListGenerator();
-
+ll.add("puppy");
