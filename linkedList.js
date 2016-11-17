@@ -13,9 +13,16 @@ function linkedListGenerator(){
      }
 
      function getTail( ) {
-      while(listHead) {
+      var curNode = listHead;
 
+      while(curNode !== null) {
+        if (curNode.next !== null) {
+          curNode = curNode.next;
+        } else {
+          return curNode;
+        }
       }
+          return curNode;
      }
 
      function add(value) {
