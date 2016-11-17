@@ -26,7 +26,17 @@ function linkedListGenerator(){
      }
 
      function add(value) {
-
+        var tail = getTail();
+        var newNode = {
+          value: value,
+          next: null
+        };
+        if (tail === null) {
+          listHead = newNode;
+        } else {
+          tail.next = newNode;
+        }
+        return listHead;
      }
 
      function get(number) {
