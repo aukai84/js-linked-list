@@ -39,11 +39,36 @@ function linkedListGenerator(){
         return listHead;
      }
 
-     function get(number) {
+     function get(position) {
+        var curNode = listHead;
+        var count = 0;
+
+
+
+
+
+        while (count < position) {
+          if (curNode.next === null) {
+            return false;
+          }
+          curNode = curNode.next;
+          count++;
+        }
+        return curNode;
 
      }
 
-     function remove(number) {
+     function remove(position) {
+        var curNode = listHead;
+        var count = 0;
+        var deletedNode = null;
+        var beforeDelete = null;
+        var nodeToDelete = null;
+        if (position === 0) {
+            deletedNode = curNode;
+            curNode = null;
+
+        }
 
      }
 
