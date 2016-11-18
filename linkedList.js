@@ -74,7 +74,26 @@ function linkedListGenerator(){
      }
 
 
-     function insert(value, number) {
+     function insert(value, position) {
+        var beforeNode = get(position -1);
+        var curNode = get(position);
+        var insertNode = {
+          value: value,
+          next: null
+        };
+        if (listHead === null) {
+          return false;
+        } else if (position === 0) {
+          insertNode.next = listHead;
+          listHead = insertNode;
+        } else {
+          insertNode.next = curNode;
+          beforeNode.next = insertNode;
+
+        }
+
+
+
 
      }
 
@@ -86,7 +105,7 @@ function linkedListGenerator(){
       remove: remove,
       insert: insert
 
-     }
+     };
 
 
 
