@@ -43,10 +43,6 @@ function linkedListGenerator(){
         var curNode = listHead;
         var count = 0;
 
-
-
-
-
         while (count < position) {
           if (curNode.next === null) {
             return false;
@@ -59,18 +55,24 @@ function linkedListGenerator(){
      }
 
      function remove(position) {
-        var curNode = listHead;
-        var count = 0;
-        var deletedNode = null;
-        var beforeDelete = null;
-        var nodeToDelete = null;
-        if (position === 0) {
-            deletedNode = curNode;
-            curNode = null;
+       var beforeDelete = get(position -1);
+       var curNode = get(position);
+       var nextNode = curNode.next;
 
-        }
+      if (listHead === null) {
+        return false;
+      } else if (position === 0) {
+        listHead = listHead.next;
+      } else if (curNode === false) {
+        return false;
+      } else {
+        beforeDelete.next = nextNode;
+      }
+
+
 
      }
+
 
      function insert(value, number) {
 
@@ -84,9 +86,12 @@ function linkedListGenerator(){
       remove: remove,
       insert: insert
 
-     };
+     }
+
+
+
 
 }
 
 var ll = linkedListGenerator();
-ll.add("puppy");
+
