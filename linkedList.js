@@ -81,10 +81,11 @@ function linkedListGenerator(){
           value: value,
           next: null
         };
-        if (listHead === null) {
+
+        if (curNode === false || position < 0) {
           return false;
         } else if (position === 0) {
-          insertNode.next = listHead;
+          insertNode.next = curNode;
           listHead = insertNode;
         } else {
           insertNode.next = curNode;
